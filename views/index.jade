@@ -1,0 +1,69 @@
+extends layout
+
+block content
+  
+  h1=title
+
+  #app
+    .row
+      .span12
+        ul#nav.breadcrumb
+    #details
+
+  script#collection-details-template(type="text/backbone")
+    .row
+      #collection-list.span8
+      #collection-options.span3
+
+  script#db-details-template(type="text/backbone")
+    .row
+      #database-list.span8
+      #database-options.span3
+
+  script#new-db-template(type="text/backbone")
+    form#addDb
+      input(id='newDb', type="text")
+      button.btn(type="submit")
+        i.icon.icon-plus-sign
+        | Add Db
+
+  script#new-collection-template(type="text/backbone")
+    form#addCollection
+      input(id='newCollection', type="text")
+      button.btn(type="submit")
+        i.icon.icon-plus.sign
+        | Add
+
+  script#database-list-template(type="text/backbone")
+    td(width=60)
+      img(src="/img/database.png", style="height:24px")
+    td
+      h4
+        a(href="#", data-db!='<%=name%>') <%=name%>
+    td
+      button.btn
+        i.icon.icon-remove
+        | delete
+
+  script#collection-list-template(type="text/backbone")
+    td(width=60)
+      img(src="/img/collections.png", style="height:24px")
+    td
+      h4
+        a(href="#", data-collection!='<%name%>')<%=name%>
+    td
+      button.btn
+        i.icon.icon-remove
+        | delete
+
+  script(src="/javascripts/congo/index.js")
+  script(src="/javascripts/congo/base.js")
+  script(src="/javascripts/congo/nav.js")
+  script(src="/javascripts/congo/database.js")
+  script(src="/javascripts/congo/collections.js")
+
+  script 
+    $(function(){
+        Congo.start();
+    })
+

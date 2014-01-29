@@ -1,0 +1,12 @@
+Express server listening on port \\.\pipe\af263a79-1384-4c17-b958-8d4d2030aac5
+[90mGET / [36m304 [90m17ms[0m
+[90mGET / [32m200 [90m4ms - 1.06kb[0m
+[90mGET /js/libs/handlebars-1.3.0.js [33m404 [90m3ms[0m
+[90mGET / [32m200 [90m2ms - 1.06kb[0m
+[90mGET / [32m200 [90m9ms - 1.24kb[0m
+[90mGET / [32m200 [90m2ms - 1.55kb[0m
+[90mGET / [32m200 [90m2ms - 1.57kb[0m
+[90mGET / [32m200 [90m1ms - 1.86kb[0m
+[90mGET / [32m200 [90m3ms - 1.9kb[0m
+[90mGET / [32m200 [90m3ms - 1.9kb[0m
+[90mGET / [32m200 [90m2ms - 1.96kb[0m

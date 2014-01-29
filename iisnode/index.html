@@ -1,0 +1,87 @@
+<html>
+<head>
+    <title>iisnode logs</title>
+    <style type="text/css">
+        body
+        {
+            font-family: "Trebuchet MS" , Arial, Helvetica, sans-serif;
+        }
+        table
+        {
+            border-collapse: collapse;
+        }
+        td, th
+        {
+            border: 1px solid lightgray;
+            padding: 3px 7px 2px 7px;
+        }
+        th
+        {
+            text-align: left;
+            padding-top: 5px;
+            padding-bottom: 4px;
+            background-color: Gray;
+            color: #ffffff;
+        }
+        td.stderr
+        {
+            color: Red;
+        }
+    </style>
+</head>
+<body>
+    <table id="logFilesTable">
+        <tr>
+            <th>
+                Computer name
+            </th>
+            <th>
+                PID
+            </th>
+            <th>
+                Type
+            </th>
+            <th>
+                Created
+            </th>
+            <th>
+                Link
+            </th>
+        </tr>
+    </table>
+    <p id="lastUpdated"></p>
+    <script type="text/javascript">
+
+        // this is replaced with actual data at runtime by code in interceptor.js
+        var logFiles = [{"file":"EXODUS-PC-10496-stdout-1390887653185.txt","computername":"EXODUS-PC","pid":10496,"type":"stdout","created":1390887653185},{"file":"EXODUS-PC-11572-stdout-1390887665806.txt","computername":"EXODUS-PC","pid":11572,"type":"stdout","created":1390887665806},{"file":"EXODUS-PC-11912-stderr-1390887366992.txt","computername":"EXODUS-PC","pid":11912,"type":"stderr","created":1390887366992},{"file":"EXODUS-PC-11912-stdout-1390887366988.txt","computername":"EXODUS-PC","pid":11912,"type":"stdout","created":1390887366988},{"file":"EXODUS-PC-1848-stderr-1390887360399.txt","computername":"EXODUS-PC","pid":1848,"type":"stderr","created":1390887360399},{"file":"EXODUS-PC-1848-stdout-1390887360344.txt","computername":"EXODUS-PC","pid":1848,"type":"stdout","created":1390887360344},{"file":"EXODUS-PC-3580-stdout-1390918322831.txt","computername":"EXODUS-PC","pid":3580,"type":"stdout","created":1390918322831},{"file":"EXODUS-PC-4008-stdout-1390888578082.txt","computername":"EXODUS-PC","pid":4008,"type":"stdout","created":1390888578082},{"file":"EXODUS-PC-4188-stdout-1390951454435.txt","computername":"EXODUS-PC","pid":4188,"type":"stdout","created":1390951454435},{"file":"EXODUS-PC-4940-stderr-1390888465767.txt","computername":"EXODUS-PC","pid":4940,"type":"stderr","created":1390888465767},{"file":"EXODUS-PC-4940-stdout-1390888465764.txt","computername":"EXODUS-PC","pid":4940,"type":"stdout","created":1390888465764},{"file":"EXODUS-PC-5752-stdout-1387858030221.txt","computername":"EXODUS-PC","pid":5752,"type":"stdout","created":1387858030221},{"file":"EXODUS-PC-5876-stdout-1390918377873.txt","computername":"EXODUS-PC","pid":5876,"type":"stdout","created":1390918377873},{"file":"EXODUS-PC-6428-stderr-1387857969581.txt","computername":"EXODUS-PC","pid":6428,"type":"stderr","created":1387857969581},{"file":"EXODUS-PC-6428-stdout-1387857969578.txt","computername":"EXODUS-PC","pid":6428,"type":"stdout","created":1387857969578},{"file":"EXODUS-PC-6520-stdout-1387857944869.txt","computername":"EXODUS-PC","pid":6520,"type":"stdout","created":1387857944869},{"file":"EXODUS-PC-6940-stdout-1390951590576.txt","computername":"EXODUS-PC","pid":6940,"type":"stdout","created":1390951590576},{"file":"EXODUS-PC-7640-stdout-1390887446875.txt","computername":"EXODUS-PC","pid":7640,"type":"stdout","created":1390887446875},{"file":"EXODUS-PC-9776-stdout-1390951808615.txt","computername":"EXODUS-PC","pid":9776,"type":"stdout","created":1390951808615},{"file":"EXODUS-PC-9852-stderr-1387857963943.txt","computername":"EXODUS-PC","pid":9852,"type":"stderr","created":1387857963943},{"file":"EXODUS-PC-9852-stdout-1387857963938.txt","computername":"EXODUS-PC","pid":9852,"type":"stdout","created":1387857963938}];
+        var lastUpdated = 1390951808828;
+        var date = new Date();
+
+        date.setTime(lastUpdated);
+        document.getElementById('lastUpdated').innerHTML = 'Index was last updated ' + date;
+
+        logFiles.sort(function (a, b) {
+            return b.created - a.created;
+        });
+
+        var logFilesTable = document.getElementById("logFilesTable");
+        for (var i = 0; i < logFiles.length; i++) {
+            var logFile = logFiles[i];
+            date.setTime(logFile.created);
+            var row = logFilesTable.insertRow(-1);
+            var computerNameCell = row.insertCell(0);
+            var pidCell = row.insertCell(1);
+            var typeCell = row.insertCell(2);
+            var dateCell = row.insertCell(3);
+            var logCell = row.insertCell(4);
+            computerNameCell.innerHTML = logFile.computername;
+            pidCell.innerHTML = logFile.pid.toString();
+            typeCell.innerHTML = logFile.type;
+            typeCell.setAttribute('class', logFile.type);
+            dateCell.innerHTML = date.toString();
+            logCell.innerHTML = '<a href="' + logFile.file + '">log</a>';
+        };
+
+    </script>
+</body>
+</html>

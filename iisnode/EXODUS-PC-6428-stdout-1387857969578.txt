@@ -1,0 +1,4 @@
+Express server listening on port \\.\pipe\1b2f0972-1b4d-434d-866f-f21fe83dcfcd
+[90mPUT /mongo-api/dbs/hello [32m200 [90m1034ms - 21[0m
+[90mPUT /mongo-api/dbs/hellotest [32m200 [90m1009ms - 25[0m
+[90mGET / [36m304 [90m68ms[0m

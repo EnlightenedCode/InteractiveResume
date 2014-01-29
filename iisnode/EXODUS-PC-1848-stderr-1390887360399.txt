@@ -1,0 +1,12 @@
+Application has thrown an uncaught exception and is terminated:
+TypeError: Cannot read property 'databases' of undefined
+    at C:\Websites\MongoDbExplorer\lib\congo.js:27:20
+    at Object.exports.error (C:\Websites\MongoDbExplorer\node_modules\mongoskin\lib\mongoskin\utils.js:27:5)
+    at EventEmitter.<anonymous> (C:\Websites\MongoDbExplorer\node_modules\mongoskin\lib\mongoskin\utils.js:66:17)
+    at EventEmitter.g (events.js:175:14)
+    at EventEmitter.emit (events.js:98:17)
+    at null.<anonymous> (C:\Websites\MongoDbExplorer\node_modules\mongoskin\lib\mongoskin\admin.js:59:18)
+    at EventEmitter.g (events.js:175:14)
+    at EventEmitter.emit (events.js:98:17)
+    at null.<anonymous> (C:\Websites\MongoDbExplorer\node_modules\mongoskin\lib\mongoskin\db.js:99:22)
+    at null.<anonymous> (C:\Websites\MongoDbExplorer\node_modules\mongoskin\lib\mongoskin\db.js:110:11)

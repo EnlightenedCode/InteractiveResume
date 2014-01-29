@@ -1,0 +1,6 @@
+Express server listening on port \\.\pipe\594ea04f-43e7-49dc-8170-4e2a118e1c37
+[90mGET / [36m304 [90m52ms[0m
+[90mGET /mongo-api/dbs [32m200 [90m17ms - 235[0m
+[90mGET / [36m304 [90m14ms[0m
+[90mGET / [32m200 [90m8ms - 3.16kb[0m
+[90mGET /mongo-api/dbs [32m200 [90m5ms - 235[0m
